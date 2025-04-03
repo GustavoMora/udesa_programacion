@@ -1,7 +1,7 @@
-#ejercicios de la semana 2
+#Listado de ejercicios de la semana 2
 
 # Ejercicio 1: Invertir listas
-print("\n Ejercicio 1:")
+print("\n Ejercicio 1: Listas")
 l1 = [1,2,3,4,5]
 l2 = ['Bogota', 'Rosario', 'San Fernando', 'San Miguel']
 
@@ -16,8 +16,8 @@ print(f"La lista 2: {l2}")
 print("La lista invertida seria:", invertir_lista(l2))
 
 # Ejercicio 2: Conjetura de Collatz
-#1) Empezamos con un número entero positivo
-#2) Lo evaluamos, si el número es par entonces lo dividimos entre 2. Si es impar, entonces se multiplica por 3 y se le suma 1.
+#1) Empezamos con un numero entero positivo
+#2) Lo evaluamos, si el numero es par entonces lo dividimos entre 2. Si es impar, entonces se multiplica por 3 y se le suma 1.
 #3) Al resultado lo volvemos a evaluar y nuevamente aplicamos las operaciones correspondientes hasta que obtengamos un 1.
 #4) Retornar la cantidad de pasos realizados.
 
@@ -31,17 +31,23 @@ def collatz(n):
         pasos += 1
     return pasos
 
-print("\n Ejercicio 2:")
+print("\n Ejercicio 2: Conjetura Collatz")
 max_num = 10 * 10**15
-n = int(input("Ingrese un numero entero positivo:"))
 
-if n <= 0:
-    print("Por favor, ingrese un numero entero positivo")
-elif n > max_num:
-    print(f"el numero es demasiado grande. Ingresa un valor menor a {max_num}")
-else:
-    pasos = collatz(n)
-    print(f"el numero {n} llego a 1 en {pasos} pasos.")
+try:
+    n = int(input("Ingrese un numero entero positivo: "))
+    
+    if n <= 0:
+        print("Por favor, ingrese un numero entero positivo.")
+    elif n > max_num:
+        print(f"El numero es demasiado grande. Ingresa un valor menor a {max_num}.")
+    else:
+        pasos = collatz(n)
+        print(f"El numero {n} llegó a 1 en {pasos} pasos.")
+
+except ValueError:
+    print("Error: Debes ingresar un numero entero válido.")
+
 
 # Ejercicio 3: Diccionarios
 
@@ -72,7 +78,7 @@ print(f"\nCantidad de claves que comienzan con '{letra}': {resultado2}")
 
 letra = 'm'
 resultado3 = cantidad_de_claves_letra(d, letra)
-print(f"\nCantidad de claves que comienzan con '{letra}': {resultado3}")  # Debería ser 1
+print(f"\nCantidad de claves que comienzan con '{letra}': {resultado3}")
 
 # Ejercicio 4: Fosforos
 
