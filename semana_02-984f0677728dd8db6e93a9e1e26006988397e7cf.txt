@@ -1,0 +1,36 @@
+Corrección de la entrega:
+
+
+ Ejercicio 1: Listas
+Lista original: [1, 2, 3, 4, 5]
+Lista invertida: [5, 4, 3, 2, 1]
+
+Lista original: ['Bogotá', 'Rosario', 'San Fernando', 'San Miguel']
+Lista invertida: ['San Miguel', 'San Fernando', 'Rosario', 'Bogotá']
+
+ Ejercicio 2: Collatz
+El número 27 llegó a 1 en 111 pasos.
+
+Ejercicio 3: Diccionarios
+
+Cantidad de definiciones por clave:
+{'manzana': 3, 'banana': 3, 'tomate': 3, 'lechuga': 3, 'limón': 3}
+
+Cantidad de claves que comienzan con 'l': 2
+
+Cantidad de claves que comienzan con 'm': 1
+
+ Ejercicio 4: Fosforos
+
+ Propagación de fuego
+Antes : [0, 0, 0, -1, 1, 0, 0, 0, -1, 0, 1, 0, 0]
+Después: [0, 0, 0, -1, 1, 1, 1, 1, -1, 1, 1, 1, 1]
+
+Antes : [0, 0, 0, 1, 0, 0]
+Después: [1, 1, 1, 1, 1, 1]
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.001s
+
+OK
+
