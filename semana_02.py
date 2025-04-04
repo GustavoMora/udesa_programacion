@@ -2,18 +2,23 @@
 
 # Ejercicio 1: Invertir listas
 print("\n Ejercicio 1: Listas")
-l1 = [1,2,3,4,5]
-l2 = ['Bogota', 'Rosario', 'San Fernando', 'San Miguel']
 
 def invertir_lista(lista):
-    return lista[::-1]
+    lista_invertida = []
 
-#verificamos la función
-print(f"Lista 1: {l1}")
-print("La lista invertida seria:", invertir_lista(l1))
+    for i in range(len(lista) - 1, -1, -1):  
+        lista_invertida.append(lista[i])  
+    
+    return lista_invertida 
 
-print(f"La lista 2: {l2}")
-print("La lista invertida seria:", invertir_lista(l2))
+l1 = [1, 2, 3, 4, 5]
+l2 = ["Bogotá", "Rosario", "San Fernando", "San Miguel"]
+
+print("Lista original:", l1)
+print("Lista invertida:", invertir_lista(l1))
+
+print("\nLista original:", l2)
+print("Lista invertida:", invertir_lista(l2))
 
 # Ejercicio 2: Conjetura de Collatz
 #1) Empezamos con un numero entero positivo
@@ -21,33 +26,20 @@ print("La lista invertida seria:", invertir_lista(l2))
 #3) Al resultado lo volvemos a evaluar y nuevamente aplicamos las operaciones correspondientes hasta que obtengamos un 1.
 #4) Retornar la cantidad de pasos realizados.
 
+print("\n Ejercicio 2: Collatz")
+
 def collatz(n):
-    pasos = 0
-    while n != 1:
-        if n % 2 == 0:
-            n //= 2
-        else:
-            n = 3 * n + 1
-        pasos += 1
-    return pasos
-
-print("\n Ejercicio 2: Conjetura Collatz")
-max_num = 10 * 10**15
-
-try:
-    n = int(input("Ingrese un numero entero positivo: "))
-    
-    if n <= 0:
-        print("Por favor, ingrese un numero entero positivo.")
-    elif n > max_num:
-        print(f"El numero es demasiado grande. Ingresa un valor menor a {max_num}.")
+    if n == 1:
+        return 0 #al llegar a 1 terminan los pasos
+    elif n % 2 == 0:
+        return 1 + collatz(n / 2)  # n par
     else:
-        pasos = collatz(n)
-        print(f"El numero {n} llegó a 1 en {pasos} pasos.")
+        return 1 + collatz(3 * n + 1)  # n impar
 
-except ValueError:
-    print("Error: Debes ingresar un numero entero válido.")
-
+#test
+n = 27
+pasos = collatz(n)
+print(f"El número {n} llegó a 1 en {pasos} pasos.")
 
 # Ejercicio 3: Diccionarios
 
@@ -66,7 +58,7 @@ def contar_definiciones(d):
 def cantidad_de_claves_letra(d, l):
     return sum(1 for clave in d if clave.startswith(l))
 
-print("\nEjercicio 3:")
+print("\nEjercicio 3: Diccionarios")
 
 resultado1 = contar_definiciones(d)
 print("\nCantidad de definiciones por clave:")
@@ -82,7 +74,7 @@ print(f"\nCantidad de claves que comienzan con '{letra}': {resultado3}")
 
 # Ejercicio 4: Fosforos
 
-print("\n Ejercicio 4:")
+print("\n Ejercicio 4: Fosforos")
 
 def propagar(L):
     L = L[:]  

@@ -48,6 +48,23 @@ try:
 except ValueError:
     print("Error: Debes ingresar un numero entero válido.")
 
+#collatz version 2:
+print("\nEjercicio 2: Collatz v2")
+
+def collatz2(n):
+    if n == 1:
+        return 0
+    else: 
+        if n%2 == 0:
+            n = n/2
+        else:
+            n = 3 * n +1
+            res = collatz(n)
+            return 1 + res 
+
+collatz2(4)
+
+
 
 # Ejercicio 3: Diccionarios
 
